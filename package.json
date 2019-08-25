@@ -3,9 +3,18 @@
   "version": "1.0.0",
   "description": "A legacy code application to work on at WarsawJS Workshop #35.",
   "scripts": {
-    "best-streaks": "node reports/bestStreaks",
-    "current-streaks": "node reports/currentStreaks",
-    "last-7-days": "node reports/lastSevenDays"
+    "best-streaks": "nodemon reports/bestStreaks --exec 'eslint . && node'",
+    "current-streaks": "nodemon reports/currentStreaks --exec 'eslint . && node'",
+    "last-7-days": "nodemon reports/lastSevenDays --exec 'eslint . && node'",
+    "test": "jest --watch",
+    "test:coverage": "jest --coverage --passWithNoTests"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.1"
+  }
 }
